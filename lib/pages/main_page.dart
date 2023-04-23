@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'main_page/contacts_page.dart';
-import 'main_page/favouties_page.dart';
+import 'main_page/contacts_page/contacts_page.dart';
+import 'main_page/favourites_page/favouties_page.dart';
 
 class MainPage extends StatefulWidget {
   final int? initialPage;
@@ -55,9 +55,9 @@ class MainPageState extends State<MainPage> {
 
   getIndex() {
     if (currentIndex == 0) {
-      return ContactsPage();
+      return const ContactsPage();
     } else if (currentIndex == 1) {
-      return FavouritesPage();
+      return const FavouritesPage();
     } else {
       return Container();
     }

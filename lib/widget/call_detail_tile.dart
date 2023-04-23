@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:houzeo_sample/constants/constant.dart';
 
 import '../model/user_model.dart';
-import '../pages/main_page/contact_detail_page.dart';
+import '../pages/main_page/contacts_page/contact_detail_page.dart';
 
 class CallDetailTile extends StatelessWidget {
   final User user;
@@ -32,16 +32,16 @@ class CallDetailTile extends StatelessWidget {
       },
       leading: CircleAvatar(
         backgroundColor: Colors.primaries[(user.firstName.length + 10) % 17],
+        radius: 24,
         child: Text(
           user.firstName[0].toUpperCase(),
-          style: TextStyle(
+          style: const TextStyle(
               fontSize: 28, fontWeight: FontWeight.w400, color: Colors.white),
         ),
-        radius: 24,
       ),
       title: Text(
         "${user.firstName} ${user.lastName}",
-        style: TextStyle(fontWeight: FontWeight.w400, fontSize: 18),
+        style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 18),
       ),
       trailing: IconButton(
         icon: Icon(

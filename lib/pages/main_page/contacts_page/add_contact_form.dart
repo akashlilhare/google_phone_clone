@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:houzeo_sample/provider/user_provider.dart';
 import 'package:provider/provider.dart';
 
-import '../../model/user_model.dart';
+import '../../../model/user_model.dart';
 
 class AddContactForm extends StatefulWidget {
   const AddContactForm({super.key});
@@ -22,17 +22,17 @@ class _ContactDetailPageState extends State<AddContactForm> {
   Widget build(BuildContext context) {
     var borderDecoration = OutlineInputBorder(
       borderRadius: BorderRadius.circular(4.0),
-      borderSide: BorderSide(color: Colors.blue, width: 2),
+      borderSide: const BorderSide(color: Colors.blue, width: 2),
     );
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.close),
+          icon: const Icon(Icons.close),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
-        title: Text("Create contact"),
+        title: const Text("Create contact"),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -54,15 +54,15 @@ class _ContactDetailPageState extends State<AddContactForm> {
                     }
                   },
                   child: userProvider.isLoading
-                      ? Container(
+                      ?const SizedBox(
                           height: 20,
                           width: 20,
-                          child: CircularProgressIndicator(
+                          child:  CircularProgressIndicator(
                             strokeWidth: 2,
                             color: Colors.white,
                           ),
                         )
-                      : Text("Save"));
+                      : const Text("Save"));
             }),
           )
         ],
@@ -76,7 +76,7 @@ class _ContactDetailPageState extends State<AddContactForm> {
                 key: _formKey,
                 child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     TextFormField(
@@ -93,11 +93,11 @@ class _ContactDetailPageState extends State<AddContactForm> {
                           }
                           return null;
                         }),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 40),
+                      padding: const EdgeInsets.only(left: 40),
                       child: TextFormField(
                         controller: lastNameController,
                         validator: (value) {
@@ -113,7 +113,7 @@ class _ContactDetailPageState extends State<AddContactForm> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     TextFormField(
@@ -133,7 +133,7 @@ class _ContactDetailPageState extends State<AddContactForm> {
                         labelText: 'Phone Number',
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     TextFormField(

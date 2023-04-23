@@ -6,21 +6,19 @@ class LoadingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-        title: Container(
-      child: Row(
-        children: [
-          Spacer(),
-          CircularProgressIndicator(),
-          SizedBox(
-            width: 18,
-          ),
-          Text(
-            "Loading...",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
-          ),
-          Spacer(),
-        ],
-      ),
-    ));
+        title: Row(
+          children: const[
+            Spacer(),
+            CircularProgressIndicator(),
+            SizedBox(
+              width: 18,
+            ),
+            Text(
+              "Loading...",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+            ),
+            Spacer(),
+          ],
+        ));
   }
 }

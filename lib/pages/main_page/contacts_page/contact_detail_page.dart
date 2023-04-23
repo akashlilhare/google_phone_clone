@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:houzeo_sample/model/user_model.dart';
-import 'package:houzeo_sample/pages/main_page/update_contact_form.dart';
+import 'package:houzeo_sample/pages/main_page/contacts_page/update_contact_form.dart';
 import 'package:houzeo_sample/provider/user_provider.dart';
 import 'package:provider/provider.dart';
 
-import '../../constants/constant.dart';
+import '../../../constants/constant.dart';
 
 class ContactDetailPage extends StatelessWidget {
   final int idx;
@@ -32,14 +32,14 @@ class ContactDetailPage extends StatelessWidget {
             children: [
               Icon(
                 icon,
-                color: Color(0xff1968D3),
+                color: const Color(0xff1968D3),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Color(0xff1968D3), fontWeight: FontWeight.w600),
               ),
             ],
@@ -50,8 +50,8 @@ class ContactDetailPage extends StatelessWidget {
 
     buildContactInfo() {
       return Container(
-        margin: EdgeInsets.symmetric(horizontal: 8),
-        padding: EdgeInsets.symmetric(horizontal: 18),
+        margin: const EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 18),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: Colors.blue.shade100),
@@ -59,44 +59,44 @@ class ContactDetailPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
-            Text(
+            const Text(
               "Contact info",
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             Row(
               children: [
-                Icon(Icons.phone_outlined),
-                SizedBox(
+                const Icon(Icons.phone_outlined),
+                const SizedBox(
                   width: 18,
                 ),
                 Text(
                   "+91 - ${user.phone}",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                  style:const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 9,
             ),
             Row(
               children: [
-                Icon(Icons.email_outlined),
-                SizedBox(
+                const   Icon(Icons.email_outlined),
+                const   SizedBox(
                   width: 18,
                 ),
                 Text(
                   user.email,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                  style:const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                 ),
               ],
             ),
-            SizedBox(
+            const     SizedBox(
               height: 16,
             ),
           ],
@@ -118,7 +118,7 @@ class ContactDetailPage extends StatelessWidget {
                         );
                       });
                 },
-                icon: Icon(Icons.edit_outlined)),
+                icon:const Icon(Icons.edit_outlined)),
             IconButton(
                 onPressed: () async {
                   userProvider.updateFavourite(
@@ -139,14 +139,14 @@ class ContactDetailPage extends StatelessWidget {
                 onPressed: () {
                   userProvider.deleteContact(user: user, context: context);
                 },
-                icon: Icon(Icons.delete_outlined)),
+                icon: const Icon(Icons.delete_outlined)),
           ],
         ),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               CircleAvatar(
@@ -154,20 +154,20 @@ class ContactDetailPage extends StatelessWidget {
                 backgroundColor: color,
                 child: Text(
                   user.firstName[0].toUpperCase(),
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.w400,
                       color: Colors.white),
                 ),
               ),
-              SizedBox(
+              const  SizedBox(
                 height: 40,
               ),
               Text(
                 "${user.firstName} ${user.lastName}",
-                style: TextStyle(fontSize: 28),
+                style: const TextStyle(fontSize: 28),
               ),
-              SizedBox(
+              const   SizedBox(
                 height: 20,
               ),
               Container(
@@ -175,7 +175,7 @@ class ContactDetailPage extends StatelessWidget {
                 height: .8,
                 color: Colors.grey.shade400,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -193,7 +193,7 @@ class ContactDetailPage extends StatelessWidget {
                   }),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -201,7 +201,7 @@ class ContactDetailPage extends StatelessWidget {
                 height: .8,
                 color: Colors.grey.shade400,
               ),
-              SizedBox(
+              const  SizedBox(
                 height: 20,
               ),
               buildContactInfo(),

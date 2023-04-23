@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../provider/user_provider.dart';
-import '../../widget/call_detail_tile.dart';
+import '../../../provider/user_provider.dart';
+import '../../../widget/call_detail_tile.dart';
 
 class FavouritesPage extends StatefulWidget {
   const FavouritesPage({Key? key}) : super(key: key);
@@ -23,11 +23,11 @@ class _FavouritesPageState extends State<FavouritesPage> {
   Widget build(BuildContext context) {
     return Consumer<UserProvider>(builder: (context, userProvider, _) {
       return Scaffold(
-        appBar: AppBar(title: Text("Favourites Contacts")),
+        appBar: AppBar(title: const Text("Favourites Contacts")),
         body: userProvider.isLoading
-            ? Center(child: CircularProgressIndicator())
+            ? const Center(child: CircularProgressIndicator())
             : userProvider.favouriteList.isEmpty
-                ? Center(
+                ? const Center(
                     child: Text("No one added in favourite List"),
                   )
                 : SingleChildScrollView(

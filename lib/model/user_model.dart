@@ -1,5 +1,3 @@
-
-
 class User {
   User({
     required this.userId,
@@ -35,13 +33,13 @@ class User {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['user_id'] = userId;
-    _data['first_name'] = firstName;
-    _data['last_name'] = lastName;
-    _data['phone'] = phone;
-    _data['email'] = email;
-    _data['is_favourite'] = isFavourite;
-    return _data;
+    final data = <String, dynamic>{};
+    data['user_id'] = userId;
+    data['first_name'] = firstName;
+    data['last_name'] = lastName;
+    data['phone'] = phone;
+    data['email'] = email;
+    data['is_favourite'] = isFavourite;
+    return data;
   }
 }

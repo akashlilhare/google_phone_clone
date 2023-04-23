@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:houzeo_sample/constants/constant.dart';
 import 'package:houzeo_sample/helper/detabase_helper.dart';
@@ -37,9 +36,9 @@ class UserProvider with ChangeNotifier {
   }
 
   saveContact({required User user, required BuildContext context}) async {
-    isLoading = true;
-    notifyListeners();
     try {
+      isLoading = true;
+      notifyListeners();
       String? id = await _dataBaseHelper.saveUser(user: user);
       if (id != null) {
         userList.add(User(
@@ -51,7 +50,6 @@ class UserProvider with ChangeNotifier {
             isFavourite: user.isFavourite));
       }
     } catch (e) {
-      print(e);
       _constants.showToast(message: "Something went wrong");
     }
     isLoading = false;
@@ -60,9 +58,9 @@ class UserProvider with ChangeNotifier {
   }
 
   updateContact({required User user, required BuildContext context}) async {
-    isLoading = true;
-    notifyListeners();
     try {
+      isLoading = true;
+      notifyListeners();
       await _dataBaseHelper.updateUser(user: user);
       for (int i = 0; i < userList.length; i++) {
         if (userList[i].userId == user.userId) {
@@ -71,7 +69,6 @@ class UserProvider with ChangeNotifier {
       }
       notifyListeners();
     } catch (e) {
-      print(e);
       _constants.showToast(message: "Something went wrong");
     }
     isLoading = false;
@@ -80,9 +77,9 @@ class UserProvider with ChangeNotifier {
   }
 
   updateFavourite({required User user, required BuildContext context}) async {
-    isLoading = true;
-    notifyListeners();
     try {
+      isLoading = true;
+      notifyListeners();
       await _dataBaseHelper.updateUser(user: user);
       if (user.isFavourite == true) {
         _constants.showToast(message: "Contact added to favourite");
@@ -101,7 +98,6 @@ class UserProvider with ChangeNotifier {
       }
       notifyListeners();
     } catch (e) {
-      print(e);
       _constants.showToast(message: "Something went wrong");
     }
     isLoading = false;
@@ -109,17 +105,16 @@ class UserProvider with ChangeNotifier {
   }
 
   deleteContact({required User user, required BuildContext context}) async {
-    isLoading = true;
-    notifyListeners();
     try {
+      isLoading = true;
+      notifyListeners();
       showDialog(
           context: context,
           builder: (builder) {
-            return LoadingIndicator();
+            return const LoadingIndicator();
           });
 
       await _dataBaseHelper.deleteUser(user: user);
-
       Navigator.of(context).pop();
       Navigator.of(context).pop();
       _constants.showToast(message: "Contact deleted successfully");

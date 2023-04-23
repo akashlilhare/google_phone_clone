@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:houzeo_sample/provider/user_provider.dart';
 import 'package:provider/provider.dart';
 
-import '../../widget/call_detail_tile.dart';
+import '../../../widget/call_detail_tile.dart';
 import 'add_contact_form.dart';
 
 class ContactsPage extends StatefulWidget {
@@ -24,7 +24,7 @@ class _ContactsPageState extends State<ContactsPage> {
   Widget build(BuildContext context) {
     return Consumer<UserProvider>(builder: (context, userProvider, _) {
       return Scaffold(
-        appBar: AppBar(title: Text("Contacts Page")),
+        appBar: AppBar(title: const Text("Contacts Page")),
         floatingActionButton: userProvider.isLoading
             ? null
             : FloatingActionButton.extended(
@@ -32,14 +32,14 @@ class _ContactsPageState extends State<ContactsPage> {
                   showDialog(
                       context: context,
                       builder: (builder) {
-                        return AddContactForm();
+                        return const AddContactForm();
                       });
                 },
                 label: const Text("New Contact"),
-                icon: Icon(Icons.add),
+                icon: const Icon(Icons.add),
               ),
         body: userProvider.isLoading
-            ? Center(child: CircularProgressIndicator())
+            ? const Center(child: CircularProgressIndicator())
             : SingleChildScrollView(
                 child: Column(
                   children: [
